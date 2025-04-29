@@ -73,7 +73,7 @@
                             <span class="ms-2 text-decoration-line-through"><?= $tasks[$i]["label"]?></span>
                             </form>
                         <?php } else { ?>
-                           <button class="btn btn-sm btn-light">
+                            <button class="btn btn-sm btn-light">
                             <i class='bi bi-square'></i>
                             </button>
                             <span class="ms-2"><?= $tasks[$i]["label"]?></span>
