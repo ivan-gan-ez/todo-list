@@ -65,14 +65,15 @@
                 <form method="POST" action="update_task.php">
                     <input type="hidden" name="task_id" value=<?= $tasks[$i]["id"];?> />
                     <input type="hidden" name="completion" value=<?= $tasks[$i]["completed"];?> />
-                    <button class="btn btn-sm btn-success">
 
                         <?php if ($tasks[$i]["completed"] === 1){ ?>
+                            <button class="btn btn-sm btn-success">
                             <i class='bi bi-check-square'></i>
                             </button>
                             <span class="ms-2 text-decoration-line-through"><?= $tasks[$i]["label"]?></span>
                             </form>
                         <?php } else { ?>
+                           <button class="btn btn-sm btn-light">
                             <i class='bi bi-square'></i>
                             </button>
                             <span class="ms-2"><?= $tasks[$i]["label"]?></span>
