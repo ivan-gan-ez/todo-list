@@ -1,4 +1,7 @@
 <?php
+    // 0: start session (necessary when you want to use $_SESSION in a page)
+    session_start();
+
     // backend code goes before html tag
     // connect to database here
     // 1: database info
@@ -58,6 +61,8 @@
         <h3 class="card-title mb-3">My Todo List</h3>
         <ul class="list-group">
 
+        <?php if ( isset($_SESSION["user"]["name"]) ) { ?>
+
         <?php foreach ($tasks as $i => $task){?>
 
         <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -103,8 +108,22 @@
             <button class="btn btn-primary btn-sm rounded ms-2">Add</button>
           </form>
         </div>
-      </div>
-    </div>
+
+        </div>
+        </div>
+
+        <div class="text-center">
+          <a href="logout.php">Logout</a>
+        </div>
+
+        <?php } else { ?>
+          <a href="login.php">Login</a>
+          <a href="signup.php">Sign Up</a>
+          </div>
+        </div>
+        <?php } ?>
+
+      
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
