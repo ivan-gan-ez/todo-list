@@ -1,6 +1,5 @@
 <?php
     $database = connectToDB();
-    
     // Get data from database
     // 2.25: recipe (sql command)
     $sql = "SELECT * FROM todos";
