@@ -1,23 +1,5 @@
 <?php
-
-    // 0: start session (necessary when you want to use $_SESSION in a page)
-    session_start();
-
-    // backend code goes before html tag
-    // connect to database here
-    // 1: database info
-    $host = "127.0.0.1";
-    $database_name = "todolist";
-    $database_user = "root";
-    $database_password = "";
-
-    // 2: connect PHP with the MySQL database
-    // PDO (PHP Database Object)
-    $database = new PDO(
-        "mysql:host=$host;dbname=$database_name", //host and db name
-        $database_user, //user
-        $database_password //password
-    );
+    $database = connectToDB();
 
     // 3: get data from login page
     $email = $_POST["email"];
@@ -49,7 +31,7 @@
                 $_SESSION["user"] = $user;
 
                 // 9: redirect user back to main page
-                header("Location: index.php");
+                header("Location: /");
                 exit;
 
             } else {
